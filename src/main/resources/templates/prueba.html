@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ol>
+        <li th:each="fila: ${lista}" th:text="${fila}">
+            valor
+        </li>
+    </ol>
+</body>
+</html>

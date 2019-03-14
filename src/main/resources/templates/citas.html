@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Last-Modified" content="0">
+        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <title>Citas</title>
+        <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <div class="titulo">Menú</div><br><br>
+            <img src="/images/calendar.png" th:src="@{/images/calendar.png}" id="foto1">
+            <a href="citas">Agregar cita</a><br><br>
+            <img src="/images/vision.png" th:src="@{/images/vision.png}" id="foto2">
+            <a href="calendario">Calendario de citas</a>
+        </header>
+        <aside>
+            <div class="titulo">Registro de cita médica</div><br><br>
+            <form action="/add" method="post">
+                Asunto: <input class="form" type="text" name="asunto" size="45"><br>
+                Hora: <input class="form" type="time" name="hora">
+                Fecha: <input class="form" type="date" name="fecha"><br>
+                Doctores: <select id="select" class="form" name="doctores">
+                    <option value="1">Dr. Gutiérrez</option>
+                    <option value="2">Dr. Mendoza</option>
+                    <option value="3">Dra. Juárez</option>
+                    <option value="4">Dra. Hilares</option>
+                </select><br>
+                <input class="button" type="submit" value="Agregar cita">
+            </form>
+        </aside>
+    </body>
+</html>

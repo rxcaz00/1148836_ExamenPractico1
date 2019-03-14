@@ -1,0 +1,87 @@
+body {
+    text-align: center;
+    font-family: "Arial Black";
+    font-size: 20px;
+    background-image: url("../images/fondo.jpg");
+}
+
+.form:hover, .form:focus {
+    border: 2px solid #04b6e2;
+}
+
+.form {
+    margin: 15px;
+    font-family: Arial;
+}
+
+.button, aside, .titulo, .form {
+    font-size: 30px;
+}
+
+header, aside {
+    padding: 10px;
+    float: left;
+    border: 2px solid white;
+    height: 590px;
+}
+
+header {
+    width: 27%;
+    background-color: rgb(4, 182, 226, 0.9);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+aside {
+    width: 68%;
+    background-color: rgb(66, 134, 244, 0.5);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #222222;
+}
+
+a, .titulo {
+    color: white;
+    margin: 10px;
+}
+
+.titulo {
+    font-size: 30px;
+}
+
+#foto1, #foto2{
+    height: 30px;
+    width: 30px;
+}
+
+.button {
+    margin-top: 50px;
+    width: 200px;
+    height: 70px;
+    border-radius: 10px;
+    float: right;
+}
+
+.button:hover, .button:focus, .form {
+    outline: none;
+}
+
+.button:hover {
+    background-color: burlywood;
+}
+
+form, header {
+    text-align: left;
+}
+
+#select:hover, #select:focus {
+    border: none;
+}

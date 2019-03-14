@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Last-Modified" content="0">
+        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <title>Calendario de citas</title>
+        <link href="../static/css/calEstilo.css" th:href="@{/css/calEstilo.css}" rel="stylesheet">
+        <script type="text/javascript" src="../static/js/calJS.js" th:src="@{'/js/calJS.js'}"></script>
+    </head>
+    <body>
+        <header>
+            <div class="titulo">Menú</div><br><br>
+            <img src="/images/calendar.png" th:src="@{/images/calendar.png}" id="foto1">
+            <a href="citas">Agregar cita</a><br><br>
+            <img src="/images/vision.png" th:src="@{/images/vision.png}" id="foto2">
+            <a href="calendario">Calendario de citas</a>
+        </header>
+        <h1>Calendario de citas médicas</h1>
+        <br/><br/>
+        <dialog id="message">
+            <button onclick="ocultar()">Cerrar</button><br><br>
+            <h3>Citas del día</h3><br>
+            <dl>
+                <li th:each="cit: ${citas}" th:text="${cit.getHora() + ' - ' + cit.getAsunto() + ' - ' + cit.getDoctor()}">
+                    valor
+                </li>
+            </dl>
+        </dialog>
+        <div id="calendario">
+            <div id="anterior" onclick="mesantes()"></div>
+            <div id="posterior" onclick="mesdespues()"></div>
+            <h2 id="titulos"></h2>
+            <table id="diasc">
+                <tr id="fila0">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr id="fila1">
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                </tr>
+                <tr id="fila2">
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                </tr>
+                <tr id="fila3">
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                </tr>
+                <tr id="fila4">
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                </tr>
+                <tr id="fila5">
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                </tr>
+                <tr id="fila6">
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                    <td onclick="mostrar()"></td>
+                </tr>
+            </table>
+            <div id="fechaactual"><b onclick="actualizar()">Hoy es: </b></div>
+            <div id="buscafecha">
+                <form action="#" name="buscar">
+                    <p>Buscar:
+                        <select name="buscames">
+                            <option value="0">Enero</option>
+                            <option value="1">Febrero</option>
+                            <option value="2">Marzo</option>
+                            <option value="3">Abril</option>
+                            <option value="4">Mayo</option>
+                            <option value="5">Junio</option>
+                            <option value="6">Julio</option>
+                            <option value="7">Agosto</option>
+                            <option value="8">Septiembre</option>
+                            <option value="9">Octubre</option>
+                            <option value="10">Noviembre</option>
+                            <option value="11">Diciembre</option>
+                        </select>
+                        <input type="text" name="buscaanno" maxlength="4" size="4" />
+                        <input type="button" value="BUSCAR" onclick="mifecha()" />
+                    </p>
+                </form>
+            </div>
+        </div>
+        </body>
+</html>
+</html>

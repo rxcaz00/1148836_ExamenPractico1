@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Citas médicas</title>
+        <link href="../static/css/estilo.css" th:href="@{/css/estilo.css}" rel="stylesheet">
+        <script type="text/javascript" src="../static/js/calendario.js" th:src="@{'/js/calendario.js'}"></script>
+    </head>
+
+    <body>
+    <div class="calendar" id="calendar-app">
+        <div class="calendar--day-view" id="day-view">
+            <span class="day-view-exit" id="day-view-exit">&times;</span>
+            <span class="day-view-date" id="day-view-date">MAR 11 2019</span>
+            <div class="day-view-content">
+                <div class="day-highlight">
+                    Tú <span class="day-events" id="day-events">no tienes citas hoy</span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date>¿Añadir una nueva cita?</span>
+                </div>
+                <div id="day-events-list" class="day-events-list">
+
+                </div>
+            </div>
+        </div>
+        <div class="calendar--view" id="calendar-view">
+            <div class="cview__month">
+                <span class="cview__month-last" id="calendar-month-last">Feb</span>
+                <span class="cview__month-current" id="calendar-month">Mar</span>
+                <span class="cview__month-next" id="calendar-month-next">Abr</span>
+            </div>
+            <div class="cview__header">Dom</div>
+            <div class="cview__header">Lun</div>
+            <div class="cview__header">Mar</div>
+            <div class="cview__header">Mié</div>
+            <div class="cview__header">Jue</div>
+            <div class="cview__header">Vie</div>
+            <div class="cview__header">Sáb</div>
+            <div class="calendar--view" id="dates">
+            </div>
+        </div>
+        <div class="footer">
+            <span><span id="footer-date" class="footer__link">Hoy es 11 de Marzo</span></span>
+        </div>
+    </div>
+    </body>
+</html>
